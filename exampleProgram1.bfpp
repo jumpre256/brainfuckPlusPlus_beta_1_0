@@ -1,34 +1,50 @@
-#{target: badge makes}#
+##target: badgermakes
 
+;z
+
+|b
+
+:a #print out the result at the end.
+.>.>.>.>.>.>.>.>.>.>.>
+$
+#|c
+
+:b
 >>>>>>>>>> #start from pointer on cell 10 to fill in cells 11 to index 1 inclusive
 
-#{meaningful subprogram that fills in cell index {pointer + 1} with value 102}#
+|j
 
+#{meaningful subprogram that fills in cell index {pointer + 1} with value 102:}#
+:d
 -[----->++<]
+$
 
+:j
+
+;d
 < #now do the same for cell 10
 
 #{repeat 10 more times: }#
 
--[----->++<]
+;d
 <
--[----->++<]
+;d
 <
--[----->++<]
+;d
 <
--[----->++<]
+;d
 <
--[----->++<]
+;d
 <
--[----->++<]
+;d
 <
--[----->++<]
+;d
 <
--[----->++<]
+;d
 <
--[----->++<]
+;d
 <
--[----->++<]
+;d
 
 
 #{pointer should now point to cell 0 which should have value 0}#
@@ -46,7 +62,7 @@
 >
 - #e
 >
------ #(space) as an 'a' for now
+++++++++++++ #r
 >
 +++++++ #m
 >
@@ -59,5 +75,15 @@
 +++++++++++++ #s
 <<<<<<<<<<
 
-#{print out the result:}#
-.>.>.>.>.>.>.>.>.>.>.>
+#print out the result:
+;a
+
+:c
+
+|h
+
+
+:z
+$
+
+:h

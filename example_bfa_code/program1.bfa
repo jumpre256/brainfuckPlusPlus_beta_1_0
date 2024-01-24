@@ -1,9 +1,0 @@
-#this is a comment.
-
->>.<<=++;;|"@--@
-
-
-#{ comment situation  ...>>,<<
-    awesomely enough all these characters inside the multiline comment don't get read
-    as operators. Lleg,,>>+@£<<£;
- }#

@@ -1,4 +1,4 @@
-package BrainfuckAss;
+package BrainfuckPlusPlus;
 
 import java.io.*;
 import java.util.List;
@@ -8,12 +8,32 @@ import java.util.Scanner;
 public class Repl {
 
     private static final Scanner javaScanner = new Scanner(System.in);
+    private static final String inputPrompt = "> ";
+    private static final String[] validInputOptions = {"program", "example0", "example1"};
 
     public static void main(String[] args) {
-        if (args.length == 1) {
-            runFile(args[0]);
-        } else {
-            System.err.print("Invalid use of program.");
+        System.out.println("Options: [\"program\", \"example0\", \"example1\"]");
+        boolean endInputLoop = false;
+        while(!endInputLoop) {
+            endInputLoop = true;
+            System.out.print(inputPrompt);
+            String userInput = javaScanner.nextLine();
+            switch (userInput) {
+                case "program":
+                    runFile("program.bfpp");
+                    break;
+                case "example0":
+                    runFile("exampleProgram0.bfpp");
+                    break;
+                case "example1":
+                    runFile("exampleProgram1.bfpp");
+                    break;
+                default:
+                    String errorMsg = "Invalid command. Choose from one of the %d available commands.%n";
+                    System.out.printf(errorMsg, validInputOptions.length);
+                    endInputLoop = false;
+                    break;
+            }
         }
     }
 
@@ -22,7 +42,7 @@ public class Repl {
         String codeOfFile = loadFile(filePath);
         String noWhitespace = stripCodeOfWhitespace(codeOfFile);
         Assembler assembler = new Assembler(noWhitespace);
-        List<Operator> code = assembler.assemble("program.bfac");
+        List<Operator> code = assembler.assemble("compile_dump.bfac");
         Interpreter.interpret(code);
     }
 
@@ -57,7 +77,7 @@ public class Repl {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-                //Tool.debugger.debug("BrainfuckAss", line);
+                //Tool.debugger.debug("BrainfuckPlusPlus", line);
                 codeOfFileStrBuilder.append(line).append("\n");
             }
             bufferedReader.close();
