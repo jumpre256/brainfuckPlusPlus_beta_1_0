@@ -7,4 +7,9 @@ Many TODOs, namely;
 -> provide instructions here on how to use the software. <br>
 
 
-Plan to improve the front-end user interface of this software with a deadline of 12th February 2024;
+Plan to improve the front-end user interface of this software with a deadline of 12th February 2024; <br>
+
+About: <br>
+Brainfuck++ adds a few "quality of life" additions to the original brainfuck language whilst keeping in the spirit of its esoteric, hardcore nature. <br>
+Designed for building bigger projects in the future in a brainfuck-esque language for the memes. Goal is to one day make a brainfuck++ powered operating system.
+Implemented in Java, goal is to hide this implementation detail more in the future.
