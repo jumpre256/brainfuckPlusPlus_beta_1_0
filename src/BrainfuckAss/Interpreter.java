@@ -9,8 +9,7 @@ public class Interpreter   //Interpreter to the brainfuckAss language.
 {
     private static Scanner ob = new Scanner(System.in);
     private static int ptr; // Data pointer
-    private static int length = 65535;
-    // Array of byte type simulating memory of max 65535 bits. Goes from 0 to 65534.
+    private static int length = 65535; //max length of memory available.
     private static byte[] memory = new byte[length];
     private static final Stack callStack = new Stack();
     private static int loopDepth = 0;
@@ -21,18 +20,13 @@ public class Interpreter   //Interpreter to the brainfuckAss language.
 
     public static void interpret(List<Operator> operators) {
         Interpreter.operators = operators;
-        fillOutLocatorMap(operators); //decided what may be called "indicators" are officially called "locators"
+        fillOutLocatorMap(operators);
         //Tool.Debugger.debug("Interpreter", locatorMap);
         try {
             fullInterpret(operators);
         } catch(RuntimeError error) {
             Repl.runtimeError(error);
         }
-        //lazyInterpret(input);
-    }
-
-    private static void lazyInterpret(String input) {
-        BrainfuckOriginal.BrainfuckEngine.interpret(input);
     }
 
     @SuppressWarnings({"DataFlowIssue", "UnnecessaryLocalVariable"})
@@ -43,7 +37,6 @@ public class Interpreter   //Interpreter to the brainfuckAss language.
             // BrainFuck is a small language with only eight instructions. In this loop we check and execute each of those eight instructions
 
             //callStack.debug_print_stack();
-            //debugInterpretTop(operators)
 
             // > moves the pointer to the right
             if (operators.get(operatorIndex).type == OperatorType.RIGHT) {
@@ -80,7 +73,7 @@ public class Interpreter   //Interpreter to the brainfuckAss language.
                 memory[ptr] = (byte) (ob.next().charAt(0));
             }
 
-                // [ jumps past the matching ] if the cell
+                // '[' jumps past the matching ']' if the cell
                 // under the pointer is 0
             else if (operators.get(operatorIndex).type == OperatorType.LOOP_OPEN) {
                 if (memory[ptr] == 0) {
@@ -173,17 +166,6 @@ public class Interpreter   //Interpreter to the brainfuckAss language.
     public static Operator getCurrentOperator()
     {
         return operators.get(operatorIndex);
-    }
-
-    private static void debugInterpretTop(List<Operator> operators)
-    {
-        Tool.Debugger.debug("Interpreter",
-                "Executing: " + operators.get(operatorIndex));
-        Tool.Debugger.debug("Interpreter",
-                "LOOPTOP:\n\t" + "loopDepth: " + loopDepth + "\n"
-                        + "\t" + "operatorIndex: " + operatorIndex);
-        Tool.Debugger.debug("Interpreter",
-                "LOOPBOTTOM:");
     }
 
     private static void debugAttributesDisplay()

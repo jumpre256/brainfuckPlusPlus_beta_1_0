@@ -1,6 +1,6 @@
-##target: badge makes
+##target: badgermakes
 
-;z5
+;z
 
 |b
 
@@ -59,7 +59,7 @@ $
 >
 - #e
 >
------ #(space) as an 'a' for now
+++++++++++++ #r
 >
 +++++++ #m
 >
@@ -82,7 +82,7 @@ $
 #|h      #error handling for jumping to locators that do not exist.
 #;h      #error handling test.
 
-:z5
+:z
 $
 
 :h

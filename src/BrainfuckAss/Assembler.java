@@ -95,7 +95,7 @@ public class Assembler extends AssemblerOperations{
                 default:
                     boolean isReserved = ((c >= 48) && (c <= 57)) || ((c >= 97) && (c <= 122));
                     if(isReserved){
-                        //I think it is best for now if unexpect char characters found in source are treated as a comment for now.
+                        //I think it is best for now if unexpected char characters found in source are treated as a comment for now.
                         //addOperator(OperatorType.STRING_LITERAL_CHAR);
                     }
                     break;
@@ -144,12 +144,9 @@ public class Assembler extends AssemblerOperations{
         while(nextChar == '\n'){
             nextChar = advance();
         }
-        boolean isValidLocator = (nextChar >= 97) && (nextChar <= 121); //is 'a' to 'y'
+        boolean isValidLocator = (nextChar >= 97) && (nextChar <= 122); //is 'a' to 'z'
         if(isValidLocator){
             addOperator(OperatorType.SET_LOCATOR, ((int)nextChar) - 96);
-        } else if (nextChar == 122) {
-            int locatorKey = z_moment();
-            addOperator(OperatorType.SET_LOCATOR, locatorKey+26);
         } else if(nextChar == '\0') {
             //do nothing.
          } else {
@@ -163,12 +160,9 @@ public class Assembler extends AssemblerOperations{
         while(nextChar == '\n'){
             nextChar = advance();
         }
-        boolean isValidLocator = (nextChar >= 97) && (nextChar <= 121); //is 'a' to 'y'
+        boolean isValidLocator = (nextChar >= 97) && (nextChar <= 122); //is 'a' to 'z'
         if(isValidLocator){
             addOperator(OperatorType.METHOD_CALL, ((int)nextChar) - 96);
-        } else if (nextChar == 122) {
-            int locatorKey = z_moment();
-            addOperator(OperatorType.METHOD_CALL, locatorKey+26);
         } else if(nextChar == '\0') {
             //do nothing.
         } else {
@@ -182,12 +176,9 @@ public class Assembler extends AssemblerOperations{
         while(nextChar == '\n'){
             nextChar = advance();
         }
-        boolean isValidLocator = (nextChar >= 97) && (nextChar <= 121); //is 'a' to 'y'
+        boolean isValidLocator = (nextChar >= 97) && (nextChar <= 122); //is 'a' to 'z'
         if(isValidLocator){
             addOperator(OperatorType.BRA, ((int)nextChar) - 96);
-        } else if (nextChar == 122) {
-            int locatorKey = z_moment();
-            addOperator(OperatorType.BRA, locatorKey+26);
         } else if(nextChar == '\0') {
             //do nothing.
         } else {

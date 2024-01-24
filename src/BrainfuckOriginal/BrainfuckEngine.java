@@ -7,19 +7,11 @@ public class BrainfuckEngine     //code credit: https://www.geeksforgeeks.org/br
     private static Scanner ob = new Scanner(System.in);
     private static int ptr; // Data pointer
 
-    // Max memory limit. It is the highest number which
-    // can be represented by an unsigned 16-bit binary
-    // number. Many computer programming environments
-    // beside brainfuck may have predefined
-    // constant values representing 65535.
+    // Max memory limit. Highest number which can be represented by an unsigned 16-bit binary
+    // number.
     private static int length = 65535;
-
-    // Array of byte type simulating memory of max
-    // 65535 bits from 0 to 65534.
     private static byte memory[] = new byte[length];
 
-    // Interpreter function which accepts the code
-    // a string parameter
     public static void interpret(String input)
     {
         int loopDepth = 0;
@@ -30,17 +22,6 @@ public class BrainfuckEngine     //code credit: https://www.geeksforgeeks.org/br
         while(true)
         {
             if(!(operatorIndex < input.length())) break;
-            // BrainFuck is a tiny language with only
-            // eight instructions. In this loop we check
-            // and execute all those eight instructions
-
-            /*Tool.Debugger.debug("reading_BrainfuckCore",
-                    "Executing: " + input.charAt(operatorIndex));
-            Tool.Debugger.debug("reading_BrainfuckCore",
-                    "LOOPTOP:\n\tloopDepth: " + loopDepth + "\n"
-                    + "\toperatorIndex: " + operatorIndex);
-            Tool.Debugger.debug("reading_BrainfuckCore",
-                    "LOOPBOTTOM:");*/
 
             // > moves the pointer to the right
             if (input.charAt(operatorIndex) == '>')
