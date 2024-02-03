@@ -11,11 +11,12 @@ For the following "`1. Main operators and characters new to brainfuck++:`" secti
 - `a` for any (lowercase) character `a` to `z`.
 
 #### 1. Main operators and characters new to brainfuck++:
-- Locator `:a` (read "set locator `a`")
+- Locator `:a`
+  (read "set locator `a`")
 This operator is like an assembly label. `:a` can be jumped to with a `;a` or `|a` operator.
-- Operator `|a`
+- Operator `|a`  
 Jumps immediately to the corresponding `:a`. Can be thought of as a "branch-always" assembly instruction.
-- The `#` character
+- The `#` character  
 Can be used to write a single-line comment that is terminated by ending the line of code with the return key.
 - Operators `$` and `;a`  
 I feel these are best communicated through some example code.
@@ -40,13 +41,13 @@ $       #this operator represents "return"
 
 In `Brainfuck++ beta 1.0`, in addition to the array of memory provided by regular brainfuck, this language provides an additional 1 single byte of variable memory, I like to call the "`active vault`" (or `AV` for short).
 
-- Operator `^` (read "set `AV`")
+- Operator `^` (read "set `AV`")  
 Copies the value in the current cell into the `active vault`.
 
-- Operator `*` (read "get `AV`")
+- Operator `*` (read "get `AV`")  
 Copies the value from the `active vault` into the current cell.
 
-- Characters `{` and `}`
+- Characters `{` and `}`  
 Simply for multi-line comments. Multi-line comments begin with `#{` and end with `}#`. Nested multi-line comments are not supported/allowed.
 
 #### 3. Motivation:
