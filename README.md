@@ -1,8 +1,8 @@
 # Brainfuck++
 #### Version beta 1.0
 
-Brainfuck language, by Urban Müller, uses the 8 single-character operations `<>+-[],.` to constitute, although impractical, a complete programming language. `Brainfuck++ beta 1.0`, a superset of brainfuck, adds 44 new characters:  
-`:;|#*^{}`, `a` to `z`, and `0` to `9`,  
+Brainfuck language, by Urban Müller, uses the 8 single-character operations `<>+-[],.` to constitute, although impractical, a complete programming language. `Brainfuck++ beta 1.0`, a superset of brainfuck, adds 34 new characters:  
+`:;|#*^{}`, `a` to `z`.
 to provide just a few new programming features. 
 
 To start, if not already, one should be familiar with brainfuck. There are many resources for learning this, one is: [Basics of BrainFuck](https://gist.github.com/roachhd/dce54bec8ba55fb17d3a).
