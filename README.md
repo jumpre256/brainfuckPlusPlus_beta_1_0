@@ -11,8 +11,7 @@ For the following "`1. Main operators and characters new to brainfuck++:`" secti
 - `a` for any (lowercase) character `a` to `z`.
 
 #### 1. Main operators and characters new to brainfuck++:
-- Locator `:a`
-  (read "set locator `a`")
+- Locator `:a` (read "set locator `a`")  
 This operator is like an assembly label. `:a` can be jumped to with a `;a` or `|a` operator.
 - Operator `|a`  
 Jumps immediately to the corresponding `:a`. Can be thought of as a "branch-always" assembly instruction.
